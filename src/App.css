@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 20px;
 }
 
 .App-logo {
@@ -34,5 +35,39 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+/*  */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea si no hay suficiente espacio */
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+}
+
+.card {
+  flex: 0 0 calc(33.33% - 20px); /* Establece el ancho de cada tarjeta; 3 tarjetas por fila */
+  margin: 10px; /* Espaciado entre tarjetas */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Transición suave al pasar el cursor */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el cursor */
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 calc(50% - 20px); /* 2 tarjetas por fila en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex: 0 0 100%; /* 1 tarjeta por fila en pantallas aún más pequeñas */
   }
 }
